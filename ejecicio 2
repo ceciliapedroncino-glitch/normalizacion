@@ -1,0 +1,19 @@
+CREATE TABLE ALUMNO (
+    Cedula VARCHAR(15) PRIMARY KEY,
+    Prim_Apellido VARCHAR(50) NOT NULL,
+    Seg_Apellido VARCHAR(50),
+    Prim_Nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IDIOMA (
+    Codigo_Idioma SERIAL PRIMARY KEY,
+    Descripcion_Idioma VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE HABLA (
+    Cedula VARCHAR(15),
+    Codigo_Idioma INT,
+    PRIMARY KEY (Cedula, Codigo_Idioma),
+    FOREIGN KEY (Cedula) REFERENCES ALUMNO(Cedula) ON DELETE CASCADE,
+    FOREIGN KEY (Codigo_Idioma) REFERENCES IDIOMA(Codigo_Idioma) ON DELETE CASCADE
+);

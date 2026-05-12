@@ -1,0 +1,3 @@
+PERSONA(cedula PK, prim_apellido, seg_apellido, prim_nombre)
+TRABAJO(codigo_trabajo PK, descripcion_trabajo) — recomendable si cada código tiene una descripción única.
+PERSONA_TRABAJO(cedula FK → PERSONA, codigo_trabajo FK → TRABAJO, PK(cedula, codigo_trabajo)).

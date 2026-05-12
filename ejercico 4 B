@@ -1,0 +1,7 @@
+PELICULA(id_pelicula PK, nompeli, iddirector FK → DIRECTOR, idpais FK → PAIS, genero, duracion)
+
+DIRECTOR(iddirector PK, nomdirector)
+
+PAIS(idpais PK, nompais)
+
+EJEMPLAR(id_pelicula FK → PELICULA, numejemplar, estadodelejemplar, PK(id_pelicula, numejemplar)) — sólo si gestionas ejemplares.
